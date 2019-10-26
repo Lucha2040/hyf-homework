@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Hello. This is, so far, my worst homework. I will be redoing it, but right now time
+is up and I can´t get over the frustration of somethings. My bad, I just need to 
+improve my understanding how to work with Github, VScode and review some basic concepts. 
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="hmweek3.css">
+    <title>Homework week 3 Form</title>
+</head>
+
+<body>
+
+    <img src="https://img.icons8.com/ultraviolet/120/000000/rebel.png">
+    <div id="progressbar">
+        <progress></progress>
+    </div>
+    <!-- I couldn't understand how to link the progress bar to the progress in the page, at least not without JS, So i lefted going crazy -->
+    <h1>Offers from another galaxy awaits for you!</h1>
+    <p>The time to choose your side has come. Sign in below so you can get discounts out of this planet. We have a big
+        selection that will convence everyone to join your side!</p>
+    <form id="form1" method="post" action="hmweek3success.html">
+        <div class="pc-tab">
+
+            <input checked="checked" id="tab1" type="radio" name="pct" />
+            <input id="tab2" type="radio" name="pct" />
+            <input id="tab3" type="radio" name="pct" />
+            <input id="tab4" type="radio" name="pct" />
+            <section>
+                <div class="tab1">
+
+                    <div class="inputs">
+                        <div class="container1">
+
+                            <label for="firstname">First name*</label>
+                            <input type="text" class="input-required" id="firstname" name="firstname" required>
+
+                            <label for="lastname">Last name*</label>
+                            <input type="text" class="input-required" id="lastname" name="lastname" required>
+
+
+                            <label for="country">Country*</label><br>
+                            <select name="country" class="input-required" id="country">
+                                <option value="Europe">Europe</option>
+                                <option value="Scandinavia">Scandinavia</option>
+                                <option value="USA">USA</option>
+                                <option value="Asia">Asia</option>
+                                <option value="Latin America">Latin America</option>
+                                <option value="Denmark" selected>Denmark</option>
+                            </select>
+
+
+                            <label for="street">Street address*</label>
+                            <input type="text" class="input-required" id="street" name="street" required>
+
+                            <label for="post-code">Postal code*</label>
+                            <input type="number" class="input-required" id="post-code" name="post-code" min="4"
+                                maxlength="4" required>
+
+
+                            <label for="profile">Profile description</label><br>
+                            <textarea name="profile" rows="4" class="input-required" id="profile"></textarea>
+
+                            <label for="shipping-address">If your want us to ship the products to a different address
+                                from
+                                your billing address, please check below:</label>
+                            <input type="checkbox" class="input-required" id="shipping-address" name="shipping-address">
+
+                            <div id="second-address">
+                                <h3>Shipping address</h3>
+
+                                <label for="firstname2">First name*</label>
+                                <input type="text" class="input-required" id="firstname2" name="firstname2">
+
+                                <label for="lastname2">Last name*</label>
+                                <input type="text" class="input-required" id="lastname2" name="lastname2">
+
+                                <label for="country2">Country*</label>
+                                <input type="text" class="input-required" id="country2" name="country2">
+
+
+                                <label for="street2">Street address*</label>
+                                <input type="text" class="input-required" id="street2" name="street2">
+
+                                <label for="post-code2">Postal code*</label>
+                                <input type="number" class="input-required" id="post-code2" name="post-code2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="tab2" id="label2" class="navigation">Second Tab</label>
+                </div>
+                <div class="tab2">
+                    <h2>Step 2: in case we need to reach out for you</h2>
+
+                    <label for="email">E-mail*</label>
+                    <input type="email" class="input-required" id="email" name="email" required>
+
+                    <label for="password">Password*</label>
+                    <input type="password" class="input-required" id="password" name="password" required>
+
+                    <label for="text">Re entry password*</label>
+                    <input type="password" class="input-required" id="text" name="text" required>
+
+                    <label for="phone">Phone*</label>
+                    <input type="tel" class="input-required" id="phone" name="phone" min="8" maxlength="8" required>
+
+
+                    <label for="newsletter">I want to sign in for the newsletter:</label>
+                    <div class="newsbox">
+                        <input type="radio" name="newsletter" value="weekly" checked>Weekly news
+                        <input type="radio" name="newsletter" value="monthly" checked>Monthly news
+                        <input type="radio" name="newsletter" value="none" checked>Don't send me news
+                    </div>
+                    <div class="inputs">
+
+                    </div>
+
+                    <label for="tab1" class="navigation">First Tab</label>
+                    <label for="tab3" id="label3" class="navigation">Third Tab</label>
+                </div>
+
+                <div class="tab3">
+                    <div class="inputs">
+                        <h2>Step 3: What would you like?</h2>
+                        <label for="elements">What kind of elements are you interested in?</label>
+                        <div class="whats-wanted">
+                            <input type="checkbox" class="input-required" name="elements1" value="apparal">Apparal
+                            <input type="checkbox" class="input-required" name="elements2" value="accesories">Accesories
+                            <input type="checkbox" class="input-required" name="elements3" value="handbags">Handbags
+                            <input type="checkbox" class="input-required" name="elements4" value="jewelry">Jewelry
+                            <input type="checkbox" class="input-required" name="elements5" value="shoes">Shoes
+                        </div>
+
+                        <div class="preferences">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTH8pTZ_7NlNHvamowNqMIZJQJOjZfXa9VyttQ9hRXQ7pLGjH8f">
+                            <input type="checkbox" class="input-required" value="shoes">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMrtgtmTdi4tYQZkCS-sq-r-ggqwv2wN7mVd3Gjbh1Re-ymH2E">
+                            <input type="checkbox" class="input-required" value="handbag">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSspf7HA5IW-zabcC_Q31btNqmg3RFzfWSpTae9KRjf4wosTUHX">
+                            <input type="checkbox" class="input-required" value="accesories">
+                        </div>
+                    </div>
+
+                    <label for="tab2" class="navigation">Second Tab</label>
+                    <label for="tab4" id="label4" class="navigation">Fourth Tab</label>
+                </div>
+
+                <div class="tab4">
+                    <h2 id="payment-tab">Step 4: Payment</h2>
+
+                    <div class="inputs">
+                        <label for="owner">Name on card*</label>
+                        <input type="text" class="input-required" id="owner" name="owner" required>
+
+                        <!-- Originally I made a field to complete, but when i checked Swathis homework I like this idea of making a list -->
+                        <label for="card-type">Card type*</label>
+                        <select name="cards" class="input-required" id="card-type">
+                            <option value="Visa">Visa</option>
+                            <option value="Mastercard">Mastercard</option>
+                            <option value="American">American Express</option>
+                            <option value="Dankort">Dankort</option>
+                        </select>
+
+                        <label for="card-number">Credit Card Number*</label>
+                        <input type="number" class="input-required" id="card-number" name="card-number" required>
+
+                        <label for="month">Expiry month*</label>
+                        <input type="number" class="input-required" id="month" name="month" required>
+
+                        <label for="year">Expiry year*</label>
+                        <input type="number" class="input-required" id="year" name="year" required>
+
+                        <label for="cvv">CVV*</label>
+                        <input type="number" class="input-required" min="3" maxlength="3" id="cvv" name="cvv" required>
+
+                    </div>
+
+                    <label for="tab3" class="navigation">Third Tab</label>>
+                    <input type="submit" id="submit">
+                </div>
+            </section>
+        </div>
+    </form>
+    <script src="hmweek3.js"></script>
+
+</body>
+
+</html>
