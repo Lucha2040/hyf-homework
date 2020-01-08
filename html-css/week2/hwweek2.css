@@ -38,27 +38,27 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
   }
-  .boxes {
+  .gallery {
     flex-flow: row wrap;
     margin: 5%;
   }
   
-  .box-1 {
+  #industryDiv {
     width: 30% auto;
     flex: 1 0 30%;
   }
   
-  .box-2 {
+  #web-development {
     width: 70% auto;
     flex: 1 0 70%;
   }
   
-  .box-3 {
+  #gallery-extras {
     width: 30% auto;
     flex: 1 0 30%;
   }
   
-  .box-4 {
+  .logotypes {
     width: 70% auto;
     flex: 1 0 70%;
   }
@@ -68,7 +68,7 @@ body {
   }
   footer {
     clear: both;
-    background-color: #3a0075;
+    background-color: #1a75aa;
     color: whitesmoke;
     display: flex;
     flex: 1 auto;
@@ -85,21 +85,28 @@ body {
     border-bottom: none;
   }
   @media (max-width: 414px) {
-    .navigator {
-      display: flex;
-      flex: 1 auto;
-      flex-flow: column nowrap;
-    }
+    nav li {
+      display: block;
+      flex-direction: column;
+    }    
   
     main {
       display: flex;
-      flex-flow: column nowrap;
+      flex-direction: column;
+
     }
   
+    .gallery {
+      display: block;
+      flex-direction: column;
+  }
+
+
+
     footer {
       display: flex;
       flex: 1 auto;
-      flex-flow: column nowrap;
+      flex-direction: column;
     }
   }
   
