@@ -30,3 +30,6 @@ VALUES ('Ciorbă de burtă', 'The ultimate hangover remedy, Beef tripe Soup', 'S
 INSERT INTO Meal  (Title, `Description`, Location, `When`, Max_reservations, Price, Created_date) 
 VALUES ('Rød grød med fløde', 'So danish, together with the danish tapas and dressing in grey', 'København', '2020-02-01 17:30:00', 12, 250.5, '2020-01-12'); 
 
+INSERT INTO Meal  (Title, `Description`, Location, `When`, Max_reservations, Price, Created_date) 
+VALUES ('Rød grød med fløde', 'TRAIL FOR ZERO', 'København', '2020-02-01 17:30:00', 0, 250.5, '2020-01-12'); 
+

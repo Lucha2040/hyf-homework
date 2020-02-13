@@ -2,7 +2,7 @@
 SELECT * FROM Reservation; 
 
 -- Add a new reservation
-INSERT INTO Reservation (Number_of_guest, Meal_id, Created_date) 
+INSERT INTO Reservation (Number_of_guests, Meal_id, Created_date) 
 VALUES (
 "4",
 "1", 
@@ -20,3 +20,4 @@ WHERE id = 2;
 
 -- Delete a reservation with any id, fx 1
 DELETE FROM Reservation WHERE id = 7; 
+

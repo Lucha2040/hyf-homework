@@ -1,10 +1,12 @@
 -- Get Meals that has a Price smaller than a specific Price fx 90
-SELECT * FROM Meal 
+SELECT * FROM meal
 WHERE Price < 90; 
 
 -- Get Meals that still has available reservations
-SELECT * FROM Meal 
-WHERE Max_reservations > 0; 
+SELECT Meal.Id, Meal.Title, Meal.Max_reservations, (Meal.Max_reservations - coalesce(sum(Reservation.Number_of_guests), 0)) AS Available_reservations FROM Meal 
+LEFT JOIN Reservation ON Meal.id = Reservation.Meal_id
+Group by (Meal.Id)
+HAVING Available_reservations > 0; 
 
 -- Get Meals that partially match a title. Rød grød med will match the Meal with the title Rød grød med fløde
 SELECT * FROM Meal 

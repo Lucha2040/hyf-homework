@@ -8,8 +8,8 @@ VALUES ('Empanadas',
 'København', 
 '01/03/2020', 
 '12',
-250,5, 
-10/02/2020
+250.5, 
+'2020-02-10'
 ); 
 
 -- Get a meal with any id, fx 1
