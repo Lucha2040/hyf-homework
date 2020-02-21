@@ -1,0 +1,19 @@
+{
+  "name": "circle-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "warmup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node circle calculator/warmup.js",
+    "dev": "nodemon circle calculator/warmup.js"
+  },
+  "author": "Lucha Caruso",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

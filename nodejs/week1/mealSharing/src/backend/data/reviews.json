@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "numberOfStars": 3,
+    "content": "Best meal ever",
+    "mealId": 1,
+    "createdAt": 12345
+  },
+  {
+    "id": 2,
+    "numberOfStars": 5.0,
+    "content": "We ate all of them and were delicious. Real argentinean food!",
+    "mealID": 1,
+    "createdAt": "2020-02-11"
+  },
+  {
+    "id": 3,
+    "numberOfStars": 5.0,
+    "content": "Enjoying the pizza while celebrating Inter vs AC Milan winning 4 to 2. In our face Zlatan!",
+    "mealID": 4,
+    "createdAt": "2020-02-09"
+  },
+  {
+    "id": 4,
+    "numberOfStars": 3.0,
+    "content": "Le hubiera puesto mas mariscos pero estaba rica",
+    "mealID": 5,
+    "createdAt": "2020-02-14"
+  },
+  {
+    "id": 5,
+    "numberOfStars": 5.0,
+    "content": "I could eat 100 of this Pastéis",
+    "mealID": 6,
+    "createdAt": "2020-02-15"
+  },
+  {
+    "id": 6,
+    "numberOfStars": 3.0,
+    "content": "Nice sunday food but I am still hungover",
+    "mealID": 9,
+    "createdAt": "2020-02-18"
+  },
+  {
+    "id": 7,
+    "numberOfStars": 5.0,
+    "content": "Vegetarian and healthy flavours from Mumbai",
+    "mealID": 8,
+    "createdAt": "2020-02-13"
+  },
+  {
+    "id": 8,
+    "numberOfStars": 3.0,
+    "content": "Ok food. Nothing crazy",
+    "mealID": 1,
+    "createdAt": "2020-02-11"
+  }
+]
