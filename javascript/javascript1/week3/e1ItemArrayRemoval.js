@@ -1,5 +1,5 @@
 const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
-console.log(names)
+
 
 function removeName (nameToRemove) {
     for (i=0; i < names.length; i++) {
