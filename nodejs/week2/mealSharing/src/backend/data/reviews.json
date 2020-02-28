@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "title": "Delicious meal",
+      "createdBy": "Noli Caruso",
+      "numberOfStars": 3,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt": 12345 
+    },
+    {
+      "id": 2,
+      "title": "Muy Rico",
+      "createdBy": "Fran Calderon",
+      "numberOfStars": 5.0,
+      "content": "We ate all of them and were delicious. Real argentinean food!",
+      "mealID": 1,
+      "createdAt": "2020-02-11"
+    },
+    {
+      "id": 3,
+      "title": "International Pizza!",
+      "createdBy": "Matias Schultz",
+      "numberOfStars": 5.0,
+      "content": "Enjoying the pizza while celebrating Inter vs AC Milan winning 4 to 2. In our face Zlatan!",
+      "mealID": 4,
+      "createdAt": "2020-02-09"
+    },
+    {
+      "id": 4,
+      "title": "Paella nomas",
+      "createdBy": "Quique Perez",
+      "numberOfStars": 3.0,
+      "content": "Le hubiera puesto mas mariscos pero estaba rica",
+      "mealID": 5,
+      "createdAt": "2020-02-14"
+    },
+    {
+      "id": 5,
+      "title": "Great Pastéis!",
+      "createdBy": "Tiago Brazil",
+      "numberOfStars": 5.0,
+      "content": "I could eat 100 of this Pastéis",
+      "mealID": 6,
+      "createdAt": "2020-02-15"
+    },
+    {
+      "id": 6,
+      "title": "Not the best",
+      "createdBy": "David Bowie",
+      "numberOfStars": 3.0,
+      "content": "Nice sunday food but I am still hungover",
+      "mealID": 9,
+      "createdAt": "2020-02-18"
+    },
+    {
+      "id": 7,
+      "title": "Spiritual food",
+      "createdBy": "Cecilia Brassesco",
+      "numberOfStars": 5.0,
+      "content": "Vegetarian and healthy flavours from Mumbai",
+      "mealID": 8,
+      "createdAt": "2020-02-13"
+    },
+    {
+      "id": 8,
+      "numberOfStars": 3.0,
+      "title": "Could be better",
+      "createdBy": "Mathi Herranz",
+      "content": "Ok food. Nothing crazy",
+      "mealID": 1,
+      "createdAt": "2020-02-11"
+    }
+  ]

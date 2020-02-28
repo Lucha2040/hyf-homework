@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "title": "Indian food in the summer",
+      "maxNumberOfGuests": 5,
+      "description": "A nice night out eating delicious indian food",
+      "createdAt": "2019/12/7 14:34",
+      "price": 67
+    },
+    {
+      "id": 2,
+      "title": "Empanadas",
+      "maxNumberOfGuests": 12,
+      "description": "F. Exs. kød, kylling, vegetar",
+      "createdAt": "2020-02-12",
+      "price": 250.5
+    },
+    {
+      "id": 3,
+      "title": "Smørrebrød",
+      "maxNumberOfGuests": 56,
+      "description": "Yeah, overpriced danish tapas",
+      "createdAt": "2019-11-01",
+      "price": 45.0
+    },
+    {
+      "id": 4,
+      "title": "Pizza",
+      "maxNumberOfGuests": 6,
+      "description": "Homemade pizza italian style with various toppings, NEVER pinapple",
+      "createdAt": "2020-02-11",
+      "price": 50.0
+    },
+    {
+      "id": 5,
+      "title": "Paella",
+      "maxNumberOfGuests": 25,
+      "description": "Rice and seafood, like only Spanish people can do!",
+      "createdAt": "2020-01-01",
+      "price": 75.0
+    },
+    {
+      "id": 6,
+      "title": "Pastéis de Nata",
+      "maxNumberOfGuests": 100,
+      "description": "Portugal classics. stuffed pastry with crispy, creamy sweet custard dusted with cinnamon",
+      "createdAt": "2019-12-01",
+      "price": 1.5
+    },
+    {
+      "id": 7,
+      "title": "Khoresht Gheimeh",
+      "maxNumberOfGuests": 100,
+      "description": "Beef and split pea stew with dried limes and cooked in a tomato, with fried potatoes on the top",
+      "createdAt": "2020-08-31",
+      "price": 10.0
+    },
+    {
+      "id": 8,
+      "title": "Varan bhaat",
+      "maxNumberOfGuests": 150,
+      "description": "Toor dal (lentil) with ghee, turmeric and cumin powder. Served over steaming hot rice or bhaat",
+      "createdAt": "2019-12-31",
+      "price": 80.5
+    },
+    {
+      "id": 9,
+      "title": "Ciorbă de burtă",
+      "maxNumberOfGuests": 19,
+      "description": "The ultimate hangover remedy, Beef tripe Soup",
+      "createdAt": "2020-01-12",
+      "price": 15.5
+    },
+    {
+      "id": 10,
+      "title": "Rød grød med fløde",
+      "maxNumberOfGuests": 12,
+      "description": "So danish, together with the danish tapas and dressing in grey",
+      "createdAt": "2020-01-12",
+      "price": 250.5
+    }
+  ]
