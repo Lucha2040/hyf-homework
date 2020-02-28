@@ -1,0 +1,60 @@
+{
+	"science-fiction": {
+		"books": [{
+				"title": "So long, and thanks for all the fish",
+				"author": "Douglas Adams"
+			},
+			{
+				"title": "sum",
+				"author": "David Eagleman"
+			},
+			{
+				"title": "I, robot",
+				"author": "Issac Assimov"
+			},
+			{
+				"title": "The Illustrated man",
+				"author": "Ray Bradbury"
+			}
+		],
+		"movies": [{
+				"title": "The road",
+				"director": "John Hillcoat"
+			},
+			{
+				"title": "Star wars",
+				"director": "George Lucas"
+			},
+			{
+				"title": "Interestellar",
+				"director": "Christopher Nolan"
+			},
+			{
+				"title": "Arrival",
+				"director": "Denis Villeneuve"
+			},
+			{
+				"title": "Ghost in the Shell",
+				"director": "Mamoru Oshii"
+			}
+		]
+
+	}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Cool App: 
+
+// BRAILLE TRANSLATION
+// https://api.funtranslations.com/translate/braille.json
+
+// This is a cool Api that doesn't need any key, just to invoke the endpoint. 
+// Regardless of the positive impact for blind people, what impress me the most is that I never thought about the use of an Api beyond the browser, but this api modifies the adapted printers and pads. 
+
+
+// APIMEME: 
+// http://apimeme.com/?ref=apilist.fun
+// Also this one was pretty cool 
