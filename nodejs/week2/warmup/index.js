@@ -1,20 +1,24 @@
 const express = require("express"); 
 const app = express(); 
 
-app.get("/numbers/add", (req, res) => {
-const firstNumber = Number(req.query.first); 
-const secondNumber = Number(req.query.second);
-const result = firstNumber + secondNumber;
-res.send(`The sum of your numbers is ${result}` )
-}); 
 
-app.get("/numbers/multiply/:first/:second", (req, res) => {
-    const firstNum = Number(req.params.first); 
-    const secondNum = Number(req.params.second);
-    const result = firstNum * secondNum;     
-    res.send(`The sum of your numbers is ${result}`)
-    }); 
-    
+app.get("/numbers/add", (req, res) => {
+const {first, second} = req.query;
+const firstNumber = Number(first); 
+const secondNumber = Number(second); 
+
+const getSum = firstNumber + secondNumber
+res.json(`The sum of your numbers is ${getSum}`)
+});
+
+
+app.get("/numbers/multiply/:first/:second", (req, res) => { 
+        const {first, second} = req.params;
+        const firstNumber = Number(first); 
+        const secondNumber = Number(second); 
+        const getProduct = firstNumber * secondNumber;     
+        res.send(`The multiplication of your numbers is ${getProduct}`)
+    })
 
 
 const PORT = 3000; 

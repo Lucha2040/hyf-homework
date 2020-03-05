@@ -1,6 +1,6 @@
 const largeMeals = function (req, res) {
-    const jsonMealsObj = require('../data/meals.json');  
-    const jsonReviewMeal = require('../data/reviews.json');   
+    const jsonMealsObj = require("../data/meals");  
+    const jsonReviewMeal = require("../data/reviews");   
     const largeMealsArr = jsonMealsObj.filter(function (item) {
         return item.maxNumberOfGuests > 20  
       });

@@ -1,6 +1,6 @@
 const cheapMeals = function (req, res) {
-    const jsonMealsObj = require('../data/meals.json'); 
-    const jsonReviewMeal = require('../data/reviews.json');    
+    const jsonMealsObj = require("../data/meals"); 
+    const jsonReviewMeal = require("../data/reviews");    
     const cheapMealArr = jsonMealsObj.filter((item) =>  {
         return item.price < 80;
       });
