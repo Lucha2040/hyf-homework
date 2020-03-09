@@ -7,15 +7,14 @@ SELECT COUNT(*) AS 'total_null' FROM task WHERE due_date IS NULL;
 
 
 -- 3.Find all the tasks that are marked as done
-SELECT * FROM task 
+SELECT  task.*, status.name FROM task 
 JOIN status ON task.status_id= status.id
 WHERE status.name LIKE 'done%';
 
 -- 4.Find all the tasks that are not marked as done
 SELECT * FROM task 
 JOIN status ON task.status_id=status.id
-WHERE status.name LIKE 'In Progress' OR status.name LIKE 'Not started';
-
+WHERE status.name NOT LIKE 'done';
 
 -- 5.Get all the tasks, sorted with the most recently created first
 SELECT * FROM task 
