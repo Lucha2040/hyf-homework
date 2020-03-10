@@ -1,16 +1,15 @@
 const largeMeals = function (req, res) {
-    const jsonMealsObj = require('../data/meals.json');  
-    const jsonReviewMeal = require('../data/reviews.json');   
-    const largeMealsArr = jsonMealsObj.filter(function (item) {
+    const jsonMealsObj = require('../data/meals');  
+    const jsonReviewMeal = require('../data/reviews');   
+    const largeMealsArr = jsonMealsObj.filter((item) => {
         return item.maxNumberOfGuests > 20  
       });
-      const largeReviewMeals = jsonMealsObj.map((el) => {
+      largeMealsArr.map((el) => {
           return el.review = jsonReviewMeal.filter((item) => {
-           el.id === item.mealID
-              return item.mealID === el.id
+           return el.id === item.mealID
           }); 
       }) 
-      res.json([largeMealsArr])
+      res.json(largeMealsArr)
 }
 
 module.exports = largeMeals;

@@ -1,13 +1,12 @@
 const renderMeals = function (req, res) {
-    const jsonMealsObj = require('../data/meals.json');   
-    const jsonReviewMeal = require('../data/reviews.json');
-const mealsWithReview = jsonMealsObj.map((el) => {
+    const jsonMealsObj = require('../data/meals');   
+    const jsonReviewMeal = require('../data/reviews');
+    jsonMealsObj.map((el) => {
     return el.review = jsonReviewMeal.filter((item) => {
-     el.id === item.mealID
-        return item.mealID === el.id
+     return item.mealID === el.id
     }); 
 }) 
-res.json([jsonMealsObj, mealsWithReview])
+res.json(jsonMealsObj)
 }
 
 module.exports = renderMeals;

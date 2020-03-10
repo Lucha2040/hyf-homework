@@ -1,35 +1,23 @@
 const express = require("express");
 const app = express();
 
-//1. Respond with the json for all the meals. For each meal, if there are reviews matching it's meal ID, add these reviews to each meal in the form of an array. 
-const mealsRouter = require('./routes/meals.js');
+const mealsRouter = require('./routes/meals');
 app.get('/meals', mealsRouter);
 
-
-//2.Respond with the json for all the meals (including it's reviews) that are cheap (you define what a cheap meal is)
-const cheapMeals = require('./routes/cheap_meals.js');
+const cheapMeals = require('./routes/cheap_meals');
 app.get('/cheap_meals', cheapMeals);
 
-
-//3.Respond with the json for all the meals (including it's reviews) that can fit lots of people
-const largeMeals = require('./routes/large_meals.js');
+const largeMeals = require('./routes/large_meals');
 app.get('/large_meals', largeMeals);
 
-
-
-//4.Respond with the json for a random meal (including it's reviews)
-const randomMealRouter = require('./routes/meal.js');
+const randomMealRouter = require('./routes/meal');
 app.get('/meal', randomMealRouter);
 
-//5.Respond with the json for all reservations
-const renderReservations = require('./routes/reservations.js');
+const renderReservations = require('./routes/reservations');
 app.get('/reservations', renderReservations);
 
-//6.Respond with the json for a random reservation
-const randomReservation = require('./routes/reservation.js');
+const randomReservation = require('./routes/reservation');
 app.get('/reservation', randomReservation);
-
-
 
 
 app.listen(3000);

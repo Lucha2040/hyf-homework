@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-const circle = require('./warmup.js');
-app.get('/warmup.js', circle);
+const circle = require('./warmup');
+app.get('/warmup', circle);
 
 
 app.listen(3000);
