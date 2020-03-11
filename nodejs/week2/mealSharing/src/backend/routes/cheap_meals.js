@@ -2,9 +2,9 @@ const cheapMeals = function (req, res) {
     const jsonMealsObj = require("../data/meals"); 
     const jsonReviewMeal = require("../data/reviews");    
     const cheapMealArr = jsonMealsObj.filter((item) =>  {
-        return item.price < 80;
+        return item.price < 50;
       });
-    const cheapReviewArr = jsonMealsObj.map((el) => {
+    jsonMealsObj.map((el) => {
           return el.review = jsonReviewMeal.filter((item) => {
            if (el.id === item.mealID) {
               return item.mealID === el.id

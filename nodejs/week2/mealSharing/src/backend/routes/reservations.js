@@ -6,7 +6,7 @@ const reqReservationID = Number(req.params.id);
     const filteredReservation = jsonReservObj.filter((el) => {
         return el.id === reqReservationID
     });
-    res.json(filteredReservation)
+    res.json(filteredReservation[0])
 } else 
 {res.json(jsonReservObj)}
 }

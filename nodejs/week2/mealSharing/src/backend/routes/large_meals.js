@@ -2,9 +2,9 @@ const largeMeals = function (req, res) {
     const jsonMealsObj = require("../data/meals");  
     const jsonReviewMeal = require("../data/reviews");   
     const largeMealsArr = jsonMealsObj.filter(function (item) {
-        return item.maxNumberOfGuests > 20  
+        return item.maxNumberOfGuests > 50  
       });
-      const largeReviewMeals = jsonMealsObj.map((el) => {
+      jsonMealsObj.map((el) => {
           return el.review = jsonReviewMeal.filter((item) => {
            el.id === item.mealID
            return item.mealID === el.id
