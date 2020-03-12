@@ -17,16 +17,15 @@ const renderMeals = function(req, res) {
       return parseISO(el.createdAt) > createdAfter;
     });
     res.json(mealsCreatedAfter);
-    next();
   }
 
   // Respond with the json for the meal with the corresponding id
   if (reqMealID > 0) {
-    const filteredMeal = jsonMealsObj.filter(el => {
+    const filteredMeal = jsonMealsObj.filter((el) => {
       return el.id === reqMealID;
     });
     res.json(filteredMeal[0]);
-    next();
+    return filteredMeal;
   }
   
   //Get meals that has a price smaller than maxPrice
@@ -37,20 +36,20 @@ const renderMeals = function(req, res) {
       }
     });
     res.json(cheaperMealsThan);
-    next();
   }
 
   //Only specific number of meals
   if (reqLimit > 0) {
     const showLimitResults = jsonMealsObj.slice(0, reqLimit);
     res.json(showLimitResults);
-  }
+    return showLimitResults
+  } 
   
   if (reqTitle) {
     const searcher = new FuzzySearch(jsonMealsObj, ["title"]);
     const result = searcher.search(reqTitle);
-    console.log({ result });
     res.json({ result });
+    return result;
   } 
   else { jsonMealsObj.forEach(el => {
     return (el.review = jsonReviews.filter(item => {
@@ -58,7 +57,7 @@ const renderMeals = function(req, res) {
         return el.id;
       }
     }));
-  });
+  })
   res.json(jsonMealsObj);
 }
 }

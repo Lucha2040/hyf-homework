@@ -37,4 +37,3 @@ app.get("/reviews/:id", reviewsRouter)
 
 
 app.listen(3000);
-console.log("Server is running");
