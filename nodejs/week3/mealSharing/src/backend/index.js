@@ -4,24 +4,20 @@ const router = express.Router();
 const path = require("path");
 const mealsRouter = require("./api/meals");
 const reservationsRouter = require("./api/reservations");
+const reviewsRouter = require("./api/reviews");
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000;
 
-
-
-router.use("/meals", mealsRouter);
-router.use("/reservations", reservationsRouter)
+app.use(bodyParser.json());
 app.use("/api", router);
-
+router.use("/meals", mealsRouter);
+router.use("/reservations", reservationsRouter);
+router.use("/reviews", reviewsRouter);
 
 // For week4 no need to look into this!
 // Serve the built client html
 const buildPath = path.join(__dirname, "./../frontend");
 app.use(express.static(buildPath));
-
-// Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({ extended: true }));
-// Parse JSON bodies (as sent by API clients)
-app.use(express.json());
 
 // For week4 no need to look into this!
 // Ensures that the client router works on reload aswell.
@@ -33,5 +29,4 @@ app.get("/*", function(req, res) {
     }
   });
 });
-
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
