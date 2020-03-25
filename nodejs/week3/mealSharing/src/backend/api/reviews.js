@@ -2,73 +2,83 @@ const express = require("express");
 const router = express.Router();
 const pool = require("./../database");
 
-
-// Returns all reviews	
-router.get("/", (request, response) => {
-    pool.query("SELECT * FROM review", (error, results) => {
-      if (error) {
-        response.send("No reviews were found, please check message error")
-      } else {
-      return response.json(results);   
-  }
-  }) 
-  }); 
-  
-  // Returns reviews by id	
-  router.get("/:id", (request, response) => {
-    const { id } = request.params;  
-    pool.query("SELECT * FROM review WHERE id = ?", id, (error, results) => {
-       if (error) {
-        response.send("Internal error")
-      } else {
-      return response.json(results[0]);
-    }}
-    )
-  });
-  
-
-
-  // Adds a new reviews	
-  router.post("/", (request, response) => {
-    const { Title, Description, Meal_id, Stars, Created_date } = request.body;
-
-    if (!Title || !Description || !Meal_id || !Stars || !Created_date) throw new Error ("Please, insert all the required fields")
-    
-    pool.query("INSERT INTO review SET ?", {Title, Description, Meal_id, Stars, Created_date} , (error, results) => {
-      if (error) {
-        response.send("No reviews were made, please check message error")
-      } else {     
-        response.json({id:results.insertId}); 
+// Returns all reviews
+router.get("/", (req, res) => {
+  pool.query("SELECT * FROM review", (error, results) => {
+    if (error) {
+      res.send(`No reviews were found, please check message error ${error}`);
+    } else {
+      res.json(results);
     }
-    })
   });
-  
-  
-  //Updates the reviews by id	ID
-  router.put("/:id", (request, response) => {
-    const { id } = request.params;
-    const {  Title, Description, Meal_id, Stars, Created_date}  = request.body;
-     
-  pool.query("UPDATE review SET ?  WHERE id = ?", [{Title, Description, Meal_id, Stars, Created_date}, id], (error, results) => {
-      if (error) {
-        response.send("We couldn't update the review");
-      } else {
-          return response.json(`The review with the Id:${id} was updated`)
+});
+
+// Returns reviews by id
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  pool.query("SELECT * FROM review WHERE id = ?", id, (error, results) => {
+    if (error) {
+      res.send(`No reviews were found, please check message error ${error}`);
+    } else if (results.length === 0) {
+      res.send(`We could not find a review with the Id ${id}`);
+    } else {
+      res.json(results[0]);
     }
-  }  
-  )
   });
-  
-  //Deletes the reviews by id	
-  router.delete("/:id", (request, response) => {
-    const { id } = request.params;
-    pool.query("DELETE FROM review WHERE id = ?", id, (error, results) =>  {
+});
+
+// Adds a new reviews
+router.post("/", (req, res) => {
+  const { title, description, mealId, stars, createdDate } = req.body;
+
+  if (!title || !description || !mealId || !stars || !createdDate)
+    throw new Error("Please, insert all the required fields");
+
+  pool.query(
+    "INSERT INTO review SET Title = ?, Description = ?, Meal_id = ?, Stars = ?, Created_date = ? ",
+    [title, description, mealId, stars, createdDate],
+    (error, results) => {
       if (error) {
-        response.send("Something went wrong, the reservation was not delete")
+        res.send(`No reviews were made, please check message error ${error}`);
+      } else {
+        res.json({ id: results.insertId });
       }
-      response.json(`The reservations with the Id: ${id} was deleted`);
-    });
-  }); 
-  
-  module.exports = router;
-  
+    }
+  );
+});
+
+//Updates the reviews by id	ID
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const { title, description, mealId, stars, createdDate } = req.body;
+
+  pool.query(
+    "UPDATE review SET Title = ?, Description = ?, Meal_id = ?, Stars = ?, Created_date = ?  WHERE id = ?",
+    [title, description, mealId, stars, createdDate, id],
+    (error, results) => {
+      if (error) {
+        res.send(
+          `We couldn't update the review, please check the error ${error}`
+        );
+      } else {
+        res.json(`The review with the Id:${id} was updated`);
+      }
+    }
+  );
+});
+
+//Deletes the reviews by id
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  pool.query("DELETE FROM review WHERE id = ?", id, (error, results) => {
+    if (error) {
+      res.send("Something went wrong, the review was not delete");
+    } else if (results.affectedRows === 1) {
+      res.send({ results: `The review with the id ${id} was deleted` });
+    } else {
+      res.send({ results: `Review not found` });
+    }
+  });
+});
+
+module.exports = router;
