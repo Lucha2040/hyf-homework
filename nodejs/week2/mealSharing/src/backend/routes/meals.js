@@ -46,15 +46,16 @@ const renderMeals = function (req, res) {
     res.json({ result });
     return result;
   } else {
-    jsonMealsObj.forEach((el) => {
-      return (el.review = jsonReviews.filter((item) => {
-        if (el.id === item.mealID) {
-          return el.id;
-        }
-      }));
-    });
-    return res.json(jsonMealsObj);
+    let mealsWithReviews = jsonMealsObj.map((el) => {
+      let obj = {...el}
+      obj.review = jsonReviews.filter(review => {
+        return el.id === review.mealID
+      })
+      return obj; 
+    })
+    return res.json(mealsWithReviews);
   }
 };
+
 
 module.exports = renderMeals;
