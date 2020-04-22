@@ -4,12 +4,15 @@ import { v4 as uuidv4 } from 'uuid';
 import Form from './Form'
 
 
-
 class TodoList extends React.Component {
-  state = { todos: [ ] }
+  state = { todos: [] }
+
+handleChange = (id, event) => {
+    this.setState({[event.target.name]: event.target.value });    
+  };
 
 addTodo = (todo, dueDate) => {
-    const newTodo = {id: uuidv4(), todo, dueDate, complete: false}
+    const newTodo = {id: uuidv4(), todo, dueDate, complete: false, isEdit: false}
     this.setState({
         todos: [
             ...this.state.todos,
@@ -39,11 +42,24 @@ toggleTodo = (currentId) => {
     })
 };
 
-// editTodo = (currentId) => {
-//     this.setState({
-//         todos: 
-//     })
-// }
+startEdit = (currentId) => {
+    this.setState({
+        todos: this.state.todos.map((todo, id) => {
+            if(currentId === id) {
+                return {
+                    ...todo, 
+                    isEdit: !todo.isEdit
+                };
+            } else {
+                return todo
+            }  
+        })
+    })
+};
+
+editTodo = (id, ) => {
+    this.setState()
+}
 
 render() {
     return (
@@ -56,7 +72,7 @@ render() {
                     dueDate={dueDate}
                     deleteTodo={() => this.deleteTodo(id)}
                     toggleTodo={() => this.toggleTodo(id)}
-                    editTodo={() => this.editTodo(id)}
+                    startEdit={() => this.startEdit(id)}
                     />
                 ))}
             </ul>
@@ -65,9 +81,6 @@ render() {
     )
 }
 }
-
-
-
 
 
 export default TodoList

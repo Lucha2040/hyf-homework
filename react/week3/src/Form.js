@@ -17,8 +17,6 @@ export default class Form extends Component {
         onSubmit={(event) => {
           event.preventDefault();
           if (!this.state.todo) {
-              console.log(this.state.todo);
-              console.log(this.state.dueDate);
             alert("Please, insert something to do");
           } else {
             addTodo(this.state.todo, this.state.dueDate);
@@ -31,7 +29,6 @@ export default class Form extends Component {
       >
         <label>
           Task to do
-          
         </label>
           <input
             type="text"
