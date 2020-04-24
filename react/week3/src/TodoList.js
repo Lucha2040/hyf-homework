@@ -7,9 +7,6 @@ import Form from './Form'
 class TodoList extends React.Component {
   state = { todos: [] }
 
-handleChange = (id, event) => {
-    this.setState({[event.target.name]: event.target.value });    
-  };
 
 addTodo = (todo, dueDate) => {
     const newTodo = {id: uuidv4(), todo, dueDate, complete: false, isEdit: false}
@@ -57,9 +54,13 @@ startEdit = (currentId) => {
     })
 };
 
-editTodo = (id, ) => {
-    this.setState()
-}
+// editTodo = ({todo: {id}}) => {
+//     this.setState({
+//         todos: this.state.todos.map((todo, id) => {
+//             if(todo.id === id)
+//         })
+//     })
+// }
 
 render() {
     return (
@@ -73,10 +74,12 @@ render() {
                     deleteTodo={() => this.deleteTodo(id)}
                     toggleTodo={() => this.toggleTodo(id)}
                     startEdit={() => this.startEdit(id)}
+                    // handleChange={() => this.handleChange(id)}
                     />
                 ))}
             </ul>
-            <Form addTodo={this.addTodo}/>
+            <Form addTodo={this.addTodo}
+            todos={this.state.todos}/>
         </div>
     )
 }

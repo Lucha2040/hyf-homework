@@ -4,6 +4,9 @@ function SmallBorder(props) {
   return <div className={`SmallBorder ${props.color}`}>{props.children}</div>;
 }
 
+
+
+
 function TodoItem(props) {
   const isComplete = props.todo.complete;
   const isEdit = props.todo.isEdit;
@@ -20,10 +23,10 @@ function TodoItem(props) {
       <input
         type="date"
         name="dueDate"
-        // value={this.state.dueDate} //
-        // onChange={this.handleChange}
+        value={props.todo.dueDate}
+        onChange={props.todo.handleChange}
       />
-      {/* <button onClick={}>Update</button> */}
+      <button onClick=props.>Update</button>
       </>
   );
   const renderedInput = (
