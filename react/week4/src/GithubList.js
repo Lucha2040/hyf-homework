@@ -36,7 +36,7 @@ handleSubmit = (e) => {
          isLoading: true, 
          errorMessage: null
      })
- }).catch(() => this.setState({ errorMessage: "Fail to fetch" }))
+ }).catch((error) => this.setState({ errorMessage: "Fail to fetch" }))
  .finally(() => this.setState({ isLoading: false}))
 }
 
