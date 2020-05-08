@@ -15,7 +15,7 @@ const danishWords = [
     "hola",
     "Argentina",
     "café",
-    "amor",
+    "o",
     "gato",
     "perro",
     "y",
