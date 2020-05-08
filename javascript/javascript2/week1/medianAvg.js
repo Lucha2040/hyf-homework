@@ -23,9 +23,6 @@ function getMedian(a) {
   }); //organise
   if (a.length % 2 == 1) {
     return a[Math.floor(result)];
-  } else {
-    //I don't need to make a condition because but I should set values for more than 0
-    return (a[result - 1] + a[result + 1]) / 2;
   }
 }
 const avgHouses = getAvg(housePrices);
