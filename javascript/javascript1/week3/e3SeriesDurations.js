@@ -18,19 +18,26 @@ const seriesDurations = [
       minutes: 24,
     }
   ]
+  
+const minuteConversion = seriesDurations.map((obj) => {
   const hoursToMinutes = (24 * 60);
-  const movie1 = (seriesDurations[0]["days"]) * hoursToMinutes + (seriesDurations[0]["hours"]) * 60 + seriesDurations[0]["minutes"];
-  const movie2 = (seriesDurations[1]["days"]) * hoursToMinutes + (seriesDurations[1]["hours"]) * 60 + seriesDurations[1]["minutes"];
-  const movie3 = (seriesDurations[2]["days"]) * hoursToMinutes + (seriesDurations[2]["hours"]) * 60 + seriesDurations[2]["minutes"];
-  
-  
-  function lifePercentage(a) {
-    const lifeSpanNoZeros = 420480; // This is 80 years in minutes. 
-    return (a / lifeSpanNoZeros)
-  }
-  const totalSum = lifePercentage(movie1) + lifePercentage(movie2) + lifePercentage(movie3);
-// 2 things: I know I should have done a loop for this, but I will like to hand in the homework on time (and it is a bit late already) and, for some reason, I couldn't add toFixed to the function because that was affecting the result in totalSum later. 
-console.log(seriesDurations[0]["title"] + " took " + lifePercentage(movie1).toFixed(3) + "% of my life");
-console.log(seriesDurations[1]["title"] + " took " + lifePercentage(movie2).toFixed(3) + "% of my life");
-console.log(seriesDurations[2]["title"] + " took " + lifePercentage(movie3).toFixed(3) + "% of my life");
-console.log("In total that is " + totalSum.toFixed(3) + "% of my life")  
+  const totalInMin = obj.days * hoursToMinutes + obj.hours * 60 + obj.minutes
+    return totalInMin}) 
+    
+
+const lifePercentage = minuteConversion.map((el) => {
+    const lifeSpan = 420480; // This is 80 years in minutes. 
+    const newPercent = (el/lifeSpan).toFixed(3) 
+    return Number(newPercent) 
+  });
+ 
+function logPercent () {
+  const totalPercent = lifePercentage.reduce((a, b) => a + b, 0)
+for (i= 0; i < seriesDurations.length; i++) 
+{
+ console.log(`${seriesDurations[i]["title"]} took ${lifePercentage[i]} of my life`) 
+}
+console.log(`In total that is ${totalPercent.toFixed(3)} % of my life`)
+}
+
+logPercent();
