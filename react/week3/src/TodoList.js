@@ -54,13 +54,15 @@ startEdit = (currentId) => {
     })
 };
 
-// editTodo = ({todo: {id}}) => {
-//     this.setState({
-//         todos: this.state.todos.map((todo, id) => {
-//             if(todo.id === id)
-//         })
-//     })
-// }
+editTodo = ({todo: {id}}) => {
+    this.setState({
+        todos: this.state.todos.map((todo, id) => {
+            if(todo.id === id) {
+                // FIXME: Create a new Todo with the unmodified data. Delete the one that's there, do a new one
+            }
+        })
+    })
+}
 
 render() {
     return (

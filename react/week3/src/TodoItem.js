@@ -10,7 +10,7 @@ function SmallBorder(props) {
 function TodoItem(props) {
   const isComplete = props.todo.complete;
   const isEdit = props.todo.isEdit;
-  const editingInput = (
+  let editingInput = (
     <>
       <label>Task to do</label>
       <input
@@ -26,7 +26,7 @@ function TodoItem(props) {
         value={props.todo.dueDate}
         onChange={props.todo.handleChange}
       />
-      <button onClick=props.>Update</button>
+      <button onClick={props.isEdit}>Update</button>
       </>
   );
   const renderedInput = (
