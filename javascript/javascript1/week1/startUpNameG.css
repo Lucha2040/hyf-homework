@@ -1,0 +1,12 @@
+
+button {
+    width: 20%;
+    padding: 10px;
+    margin: 50px;  
+    
+}
+button:hover {
+    background-color: lightseagreen;
+    color: whitesmoke; 
+    font-weight: bold;
+}
