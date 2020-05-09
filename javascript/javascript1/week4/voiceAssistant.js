@@ -12,6 +12,7 @@ const getMyName = new RegExp("What is my name");
 function getReply(command) {
   const clearTodo = command.split(" ");
   const matches = command.match(/(\d+)/g);
+  const name = command.slice(17);
   if (matches) {
     var firstNum = Number(matches[0]);
     var secondNum = Number(matches[1]);
@@ -29,19 +30,22 @@ function getReply(command) {
       return;
     }
   }
-  if (sayHi.test(command)) {
-    const name = command.slice(17);
-    if (namesArr.includes(name)) {
+
+  if (command.includes("name")) {
+    if (name == namesArr[0]) {
       console.log(`I know you from before ${name}`);
       return;
-    } else if (command.endsWith("name")) {
-      console.log(`Your name is ${name}`);
-    } else {
+    } else if (sayHi.test(command)) {
       namesArr.push(name);
       console.log(`Nice to meet you ${name}`);
       return;
+    } else if (command.includes("What is my name")) {
+      console.log(`Your name is ${namesArr[0]}`);
+      return;
     }
-  } else if (addTodo.test(command)) {
+  }
+
+  if (addTodo.test(command)) {
     const todo = clearTodo.filter((el) => !addArr.includes(el)).toString();
     todoArr.push(todo);
     console.log(`${todo} added to your todo`);
@@ -79,7 +83,7 @@ function getReply(command) {
   } else if (addTimer.test(command)) {
     const unit = clearTodo[5];
     const amount = Number(clearTodo[4]);
-    const timer = (unit == "minutes") ? amount * 10000 : amount * 1000;
+    const timer = unit == "minutes" ? amount * 10000 : amount * 1000;
     console.log(`Timer set for ${amount} ${unit}`);
     setTimeout(() => {
       console.log("Timer done");
@@ -88,7 +92,6 @@ function getReply(command) {
     console.log("Sorry, I did not understand your request");
   }
 }
-
 
 //Test
 
