@@ -8,23 +8,24 @@ const housePrices = [
   2100000,
 ];
 
-function getAvg(a) {
+function getAvg(arr) {
   return Math.floor(
-    a.reduce(function (a, b) {
+    arr.reduce(function (a, b) {
       return a + b;
-    }, 0) / a.length
+    }, 0) / arr.length
   );
 }
 
-function getMedian(a) {
-  const result = a.length / 2;
-  a.sort(function (a, b) {
+function getMedian(arr) {
+  const middleIndex = Math.floor(arr.length / 2);
+  arr.sort(function (a, b) {
     return a - b;
-  }); //organise
-  if (a.length % 2 == 1) {
-    return a[Math.floor(result)];
+  });
+  if (arr.length % 2 == 1) {
+    return arr[middleIndex];
   }
 }
+
 const avgHouses = getAvg(housePrices);
 const mediana = getMedian(housePrices);
 

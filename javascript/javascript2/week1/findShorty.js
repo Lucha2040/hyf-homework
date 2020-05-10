@@ -25,12 +25,12 @@ const danishWords = [
   ];
   
 
-function getShorty(arr) {  
-  const getLength = arr.map((el) => {return el.length})
+function wordsLengths(arr) {  
+  const getLength = arr.map((el) => el.length)
   const getShortest = Math.min.apply(null, getLength)
   const shorty = arr.filter((el) => {return el.length === getShortest})
   return shorty
 }
   
- getShorty(danishWords) 
- getShorty(spanishWords)
+wordsLengths(danishWords) 
+wordsLengths(spanishWords)

@@ -1,15 +1,37 @@
-console.log('Script loaded');
+console.log("Script loaded");
 
-// console.log(getAvailableProducts());
+function renderProducts(arr) {
+  const mainUl = document.querySelector("section.products ul");
+  arr.forEach((product) => {
+    const productsLi = document.createElement("li");
+    const productsUl = document.createElement("ul");
 
-const testProductNames = ['Table', 'Chair', 'Backpack', 'Printer', 'Lamp', 'Sofa', 'Pillow', 'Bed', 'Towel set', 'Carpet'];
-console.log(testProductNames)
-function renderProducts() {
-const li = document.createElement("li"); 
-const parentUl = document.querySelector(".products_ul"); 
-li.appendChild(parentUl); 
-li.innerHTML = testProductNames
+    const nameLi = document.createElement("li");
+    nameLi.innerHTML = product.name;
+    productsUl.appendChild(nameLi);
+
+    const priceLi = document.createElement("li");
+    priceLi.innerHTML = product.price;
+    productsUl.appendChild(priceLi);
+
+    const ratingLi = document.createElement("li");
+    ratingLi.innerHTML = product.rating;
+    productsUl.appendChild(ratingLi);
+
+    const shippingLi = document.createElement("li");
+    const shippingUl = document.createElement("ul");
+    product.shipsTo.forEach((country) => {
+      const countryLi = document.createElement("li");
+      countryLi.innerHTML = country;
+      shippingUl.appendChild(countryLi);
+      shippingLi.appendChild(shippingUl);
+    });
+    productsUl.appendChild(shippingLi);
+    productsLi.appendChild(productsUl);
+    mainUl.appendChild(productsLi);
+  });
 }
 
-
-renderProducts()
+let availableProducts = getAvailableProducts();
+renderProducts(availableProducts);
+console.log(availableProducts);
