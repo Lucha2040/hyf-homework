@@ -7,9 +7,11 @@ const result = fetch(
 );
 result
   .then(
-    result =>
-      new Promise(resolve => {
+    (result) =>
+      new Promise((resolve) => {
         setTimeout(() => {
           resolve(result);
         }, 3000);
-      })).then((result) => console.log(result))
+      })
+  )
+  .then((result) => console.log(result));

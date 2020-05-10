@@ -1,25 +1,20 @@
-//1.
-
-function promiseToTimeOut(milisecs) {
- return new Promise ((resolve) => {
+const promiseToTimeOut = (milisecs) => {
+  new Promise((resolve) => {
     setTimeout(() => {
-        resolve()
+      resolve();
     }, milisecs);
-    }).then(() => console.log(`Called after ${milisecs} miliseconds`))
-}
+  }).then(() => console.log(`Called after ${milisecs} miliseconds`));
+};
 
-//2.
-function letsStalkSomeone () {
-    return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject)
-    })
+const letsStalkSomeone = () => {
+  new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  })
     .then((position) => {
-        console.log(position);
-        
+      console.log(position);
     })
-    .catch((error) =>
-    console.log(error)) 
-}
+    .catch((error) => console.log(error));
+};
 
-promiseToTimeOut(9000)
-letsStalkSomeone()
+promiseToTimeOut(9000);
+letsStalkSomeone();

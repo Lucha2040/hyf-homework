@@ -1,4 +1,3 @@
-
 function myPromise(resolveAfter) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -9,3 +8,4 @@ function myPromise(resolveAfter) {
 }
 
 myPromise(3);
+git 
