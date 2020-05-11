@@ -1,5 +1,7 @@
 Carrot
 Potatoes
-Onion 
+Celery 
 Peppers
 Garlic
+Pumpkin
+Cucumbers
