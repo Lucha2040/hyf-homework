@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="giphy.css" />
+  </head>
+  <body>
+    <div class="row">
+      <form class="column">
+        <label for="gifReq">Golden Gifs will fill your eyes...</label>
+        <input
+          type="text"
+          id="gifReq"
+          placeholder="Search gifs with..."
+          class="inData"
+        />
+        <label for="totalGif">How many gifs would you like to see?</label>
+        <select id="totalGif">
+          <option>5</option>
+          <option>10</option>
+          <option>15</option>
+        </select>
+        <button type="button" onclick="fetchData()">Get Gifs</button>
+      </form>
+
+      <div id="root" class="column"></div>
+    </div>
+
+    <script src="giphy.js"></script>
+  </body>
+</html>
