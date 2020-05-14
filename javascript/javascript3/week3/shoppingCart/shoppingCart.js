@@ -1,17 +1,13 @@
-
+const myDiv = document.getElementById("root");
+const ul = document.createElement("ul");
 
 class Product {
   constructor(name, price) {
     this.name = name;
     this.price = price;
   }
-  /////The currency convertor not available yet. 
-  // convertToCurrency(currency) {
-  //   fetch("https://api.exchangeratesapi.io/latest?base=DKK")
-  //     .then(response => response.json())
-  //     .then(currency => console.log(currency));
-  // }
 }
+
 class ShoppingCart {
   constructor(products) {
     this.products = products;
@@ -22,20 +18,17 @@ class ShoppingCart {
   }
 
   removeProduct(product) {
-    this.products = this.products.filter(item => {
+    this.products = this.products.filter((item) => {
       return item.name !== product.name;
     });
   }
 
-   /////////Search Product not available yet. 
-  // searchProduct(productName) {
-  //   this.products.find(item => {
-  //     if (item.name == productName.name) {
-  //       return item;
-  //     }
-  //   })
-  //   console.log(searchArr)
-  // }
+  searchProduct(productName) {
+    const result = this.products.filter((product) =>
+      product.name.toLowerCase().includes(productName.toLowerCase())
+    );
+    console.log(result);
+  }
 
   getTotal() {
     const totalPrice = this.products.reduce((acc, item) => {
@@ -47,21 +40,23 @@ class ShoppingCart {
   }
 
   renderCart() {
-    let listOfProducts = "";
-    this.products.forEach(item => {
-      listOfProducts += ` Product: ${item.name}. Price: ${item.price} `;
+    this.products.forEach((item) => {
+      const product = document.createElement("li");
+      product.innerHTML = ` Product: ${item.name}`;
+      ul.appendChild(product);
+      const price = document.createElement("li");
+      price.innerHTML = `Price: ${item.price}`;
+      ul.appendChild(price);
     });
-    const p = document.createElement("P");
-    p.textContent = listOfProducts;
-    return p;
+    myDiv.appendChild(ul);
   }
+
   getUser() {
     fetch("https://jsonplaceholder.typicode.com/users/1")
-      .then(response => response.json())
-      .then(user => renderUser(user))
+      .then((response) => response.json())
+      .then((user) => renderUser(user));
   }
 }
-
 
 //Create some products.
 const flatscreen = new Product("Flat-screen", 5000);
@@ -83,25 +78,21 @@ shoppingCart.addProduct(bog);
 shoppingCart.addProduct(bord);
 shoppingCart.addProduct(sko);
 shoppingCart.addProduct(kuglepen);
-console.log(shoppingCart);
 
-//Please, activate the follow ones to try the method:
-// shoppingCart.removeProduct(bog);
+//Remove element
+shoppingCart.removeProduct(bog);
 
-
+//Search product
+shoppingCart.searchProduct("kuglepen");
+shoppingCart.searchProduct("bog");
 
 //Rendering the data
-const root = document.getElementById("root");
-root.appendChild(shoppingCart.renderCart());
-
-
+shoppingCart.renderCart();
 const userDiv = document.getElementById("userDiv");
 userDiv.appendChild(shoppingCart.getUser(), shoppingCart.getTotal());
-
 
 function renderUser(data) {
   const user = document.createElement("p");
   userDiv.appendChild(user);
-  user.textContent = `Items ordered by ${data.name}`;
-  return user
+  user.innerText = `Items ordered by ${data.name}`;
 }
