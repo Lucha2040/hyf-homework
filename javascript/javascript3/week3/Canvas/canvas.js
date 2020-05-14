@@ -36,5 +36,6 @@ setInterval(() => {
 }, 500);
 
 function MakeRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  const range = max - min; 
+  return Math.floor(Math.random() * range + min);
 }
