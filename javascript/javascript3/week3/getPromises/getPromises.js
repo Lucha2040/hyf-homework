@@ -1,13 +1,13 @@
 function getGitHub(userName) {
   fetch(`https://api.github.com/search/repositories?q=user:${userName}`)
-    .then((response) => response.json())
-    .then((data) => renderData(data));
+    .then(response => response.json())
+    .then(data => renderData(data));
 }
 
 function renderData(data) {
   const myDiv = document.getElementById("myDiv");
   const ul = document.createElement("ul");
-  data.items.forEach((item) => {
+  data.items.forEach(item => {
     const list1 = document.createElement("li");
     list1.innerHTML = item.owner.login;
     ul.appendChild(list1);

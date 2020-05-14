@@ -18,13 +18,13 @@ class ShoppingCart {
   }
 
   removeProduct(product) {
-    this.products = this.products.filter((item) => {
+    this.products = this.products.filter(item => {
       return item.name !== product.name;
     });
   }
 
   searchProduct(productName) {
-    const result = this.products.filter((product) =>
+    const result = this.products.filter(product =>
       product.name.toLowerCase().includes(productName.toLowerCase())
     );
     console.log(result);
@@ -40,7 +40,7 @@ class ShoppingCart {
   }
 
   renderCart() {
-    this.products.forEach((item) => {
+    this.products.forEach(item => {
       const product = document.createElement("li");
       product.innerHTML = ` Product: ${item.name}`;
       ul.appendChild(product);
@@ -53,8 +53,8 @@ class ShoppingCart {
 
   getUser() {
     fetch("https://jsonplaceholder.typicode.com/users/1")
-      .then((response) => response.json())
-      .then((user) => renderUser(user));
+      .then(response => response.json())
+      .then(user => renderUser(user));
   }
 }
 

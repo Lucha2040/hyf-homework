@@ -20,21 +20,21 @@ class Circle {
 
 setInterval(() => {
   function makeColor() {
-    let r = MakeRandomInteger(256, 0);
-    let g = MakeRandomInteger(256, 0);
-    let b = MakeRandomInteger(256, 0);
+    let r = MakeRandomInteger(0, 256);
+    let g = MakeRandomInteger(0, 256);
+    let b = MakeRandomInteger(0, 256);
     let newRgb = `rgb(${r},${g},${b})`;
     return newRgb;
   }
 
-  let newX = MakeRandomInteger(400, 1);
-  let newY = MakeRandomInteger(200, 1);
-  let newR = MakeRandomInteger(100, 1);
+  let newX = MakeRandomInteger(1, 400);
+  let newY = MakeRandomInteger(1, 200);
+  let newR = MakeRandomInteger(1, 100);
 
   let c = new Circle(newX, newY, newR, makeColor());
   c.draw();
 }, 500);
 
-function MakeRandomInteger(max, unit) {
-  return Math.floor(Math.random() * max + unit);
+function MakeRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
