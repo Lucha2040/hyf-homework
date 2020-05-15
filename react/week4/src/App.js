@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
-import GithubList from './GithubList';
+import React from "react";
+import "./App.css";
+import GithubList from "./GithubList";
 
 function App() {
   return (
     <>
-    <h1>Github fetcher</h1>
-    <GithubList />
+      <h1>Github fetcher</h1>
+      <GithubList />
     </>
   );
 }
