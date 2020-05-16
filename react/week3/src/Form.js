@@ -8,8 +8,7 @@ export default class Form extends Component {
   };
 
   handleSubmit(event) {
-    event.preventDefault();
-  }
+    }
   render() {
     const { addTodo } = this.props;
     return (

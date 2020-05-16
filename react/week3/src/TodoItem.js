@@ -4,9 +4,6 @@ function SmallBorder(props) {
   return <div className={`SmallBorder ${props.color}`}>{props.children}</div>;
 }
 
-
-
-
 function TodoItem(props) {
   const isComplete = props.todo.complete;
   const isEdit = props.todo.isEdit;
@@ -14,20 +11,32 @@ function TodoItem(props) {
     <>
       <label>Task to do</label>
       <input
+        id= {props.todo.id}
         type="text"
         name="todo"
         value={props.todo.todo}
-        onChange={props.handleChange}
+        onChange={(event) => {props.editTodo(event)}}
       />
       <label>Due Date:</label>
       <input
         type="date"
         name="dueDate"
-        value={props.todo.dueDate}
-        onChange={props.todo.handleChange}
+        value={props.dueDate.value}
+        onChange={(event) => {props.editTodo(event)}}
       />
-      <button onClick={props.isEdit}>Update</button>
-      </>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          if (!this.props.todo) {
+            alert("Please, insert something to do");
+          } else {
+            this.setState({[event.target.name]: event.target.value });
+          }
+        }}
+      >
+        Update
+      </button>
+    </>
   );
   const renderedInput = (
     <>
@@ -40,11 +49,10 @@ function TodoItem(props) {
 
   return (
     <SmallBorder>
-      <li style={{ textDecoration: isComplete ? "line-through" : "none" }}>
+      <ul style={{ textDecoration: isComplete ? "line-through" : "none" }}>
         <li>{isEdit ? editingInput : renderedInput}</li>
-      </li>
+      </ul>
     </SmallBorder>
   );
 }
-
 export default TodoItem;
