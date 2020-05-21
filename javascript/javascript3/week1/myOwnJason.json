@@ -1,0 +1,43 @@
+{
+	"science-fiction": {
+		"books": [{
+				"title": "So long, and thanks for all the fish",
+				"author": "Douglas Adams"
+			},
+			{
+				"title": "sum",
+				"author": "David Eagleman"
+			},
+			{
+				"title": "I, robot",
+				"author": "Issac Assimov"
+			},
+			{
+				"title": "The Illustrated man",
+				"author": "Ray Bradbury"
+			}
+		],
+		"movies": [{
+				"title": "The road",
+				"director": "John Hillcoat"
+			},
+			{
+				"title": "Star wars",
+				"director": "George Lucas"
+			},
+			{
+				"title": "Interestellar",
+				"director": "Christopher Nolan"
+			},
+			{
+				"title": "Arrival",
+				"director": "Denis Villeneuve"
+			},
+			{
+				"title": "Ghost in the Shell",
+				"director": "Mamoru Oshii"
+			}
+		]
+
+	}
+}
