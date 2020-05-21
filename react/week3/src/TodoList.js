@@ -11,17 +11,20 @@ class TodoList extends React.Component {
       "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ todos: data, complete: false, isEdit: false });
+    data.forEach(item => { 
+      return this.addTodo(item.description, item.deadline) 
+    })
+    
   }
-
+  
   addTodo = (todo, dueDate) => {
     const newTodo = {
-      id: uuidv4(),
-      todo,
-      dueDate,
+      id: uuidv4(), 
+      todo,  
+      dueDate, 
       complete: false,
       isEdit: false,
-    };
+    }; 
     this.setState({
       todos: [...this.state.todos, newTodo],
     });

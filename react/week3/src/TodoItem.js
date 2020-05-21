@@ -15,22 +15,22 @@ function TodoItem(props) {
         type="text"
         name="todo"
         value={props.todo.todo}
-        onChange={(event) => {props.editTodo(event)}}
+        onChange={(event) => {this.props.editTodo(event)}}
       />
       <label>Due Date:</label>
       <input
         type="date"
         name="dueDate"
-        value={props.dueDate.value}
-        onChange={(event) => {props.editTodo(event)}}
+        value={props.todo.dueDate}
+        onChange={(event) => {this.props.editTodo(event)}}
       />
+              
       <button
         onClick={(event) => {
-          event.preventDefault();
           if (!this.props.todo) {
             alert("Please, insert something to do");
           } else {
-            this.setState({[event.target.name]: event.target.value });
+            this.props.editTodo(event);
           }
         }}
       >
@@ -42,7 +42,7 @@ function TodoItem(props) {
     <>
       <input type="checkbox" checked={isComplete} onChange={props.toggleTodo} />
       To-Do: {props.todo.todo} || Date: {props.todo.dueDate}
-      <button onClick={props.deleteTodo}>Delete</button>
+        <button onClick={props.deleteTodo}>Delete</button>
       <button onClick={props.startEdit}>Edit</button>
     </>
   );
