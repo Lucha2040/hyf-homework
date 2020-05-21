@@ -18,15 +18,15 @@ function renderProducts(arr) {
     ratingLi.innerHTML = product.rating;
     productsUl.appendChild(ratingLi);
 
-    const shippingLi = document.createElement("li");
-    const shippingUl = document.createElement("ul");
+    const shippingList = document.createElement("li");
+    const shippingSubList = document.createElement("ul");
     product.shipsTo.forEach((country) => {
       const countryLi = document.createElement("li");
       countryLi.innerHTML = country;
-      shippingUl.appendChild(countryLi);
-      shippingLi.appendChild(shippingUl);
+      shippingSubList.appendChild(countryLi);
+      shippingList.appendChild(shippingSubList);
     });
-    productsUl.appendChild(shippingLi);
+    productsUl.appendChild(shippingList);
     productsLi.appendChild(productsUl);
     mainUl.appendChild(productsLi);
   });
