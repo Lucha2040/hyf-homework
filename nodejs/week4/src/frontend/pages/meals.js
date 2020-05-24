@@ -12,29 +12,41 @@ window.handleMealsRequest = () => {
     .then(res => res.json())
     .then(meals => {
   document.body.innerHTML = `
-  <header>
-      <ul>
-        <a href="/" data-navigo>Home</a>
-        <a href="meals" data-navigo>Meals</a>
-      </ul> 
-    </header>
+  <header class="mainHeader">
+  <nav class="nav">
+    <ul>
+    <a href="/" data-navigo>Home</a>
+    <a href="meals" data-navigo>Meals</a>
+   </ul> 
+  </nav>
+    <h1>Mikhuy</h1> 
+</header>
   
     <h1>Meals</h1>
-
-      <ul>
+<div class="meals">
+      <ul class="meals">
         ${meals.map(meal => {
           return `
-          <li> 
-          <ul>Meal: ${meal.Title}</ul>
-          <img src = "${meal.Title}.jpg" alt = "No imagen available" oneerror=null; this.src="noimage.png";>
-          <li>Price: ${meal.Price}</li>
+          <li><img class="img-container" src = "${meal.Title}.jpg" alt = "No imagen available" onerror="this.onerror=null; this.src='noimage.jpg'" alt="No image" width="25%"></li>
+          <ul class="meals">
+          <li class="title">${meal.Title}</li>
+          <li>Price: $${meal.Price}</li>
           <li>Location: ${meal.Location}</li>
           <li>Description: ${meal.Description}</li>
-          <a href='meal/${meal.Id}'>More about ${meal.Title}</a> 
-          </br>
-0        </li>
+          <li><a href='meal/${meal.Id}'>More about ${meal.Title}</a></li>
+          </ul>
         `}).join('')}
-      </ul>;
+      </ul>
+</div>
+      <div class="footer">
+      <p>Share the love!</p>
+      <span class="socialmedia">
+            <img  src="images/icons8-facebook-100.png" alt="facebook">
+            <img  src="images/icons8-instagram-old-100.png" alt="instagram">
+            <img  src="images/icons8-twitter-100.png" alt="twitter">
+            <img  src="images/icons8-pinterest-100.png" alt="reallife"> 
+        </span>
+    </div>
       `
 })
 .catch(err => console.error(err))
