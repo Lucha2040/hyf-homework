@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  color: #777;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav ul {
+  margin: 0;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 1% 2%;
+  color: rgba(53, 35, 20);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  border: 2px solid rgba(250, 241, 232, 0.81);
+  border-radius: 5px;
+  background-color: rgba(250, 241, 232, 0.99);
+}
+
+.nav li {
+  padding: 0 3%;
+}
+
+.mainHeader {
+  background-image: url("images/headerTable.jpg");
+  background-size: cover;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 25px;
+  height: 30%;
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  color: black;
+  text-align: center;
+  font-size: 4em;
+}
+
+h3 {
+  color: black;
+}
+
+#phrase {
+  text-align: center;
+  font-size: 20px;
+}
+
+.homeContainer {
+  text-align: center;
+  margin: 1em;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+h2.homeContainer {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+  border-bottom: 1px solid #777;
+  padding-bottom: 1%;
+}
+
+.homeContainer img {
+  margin-bottom: 5%;
+}
+
+.footer {
+  background-image: url("images/headerTable.jpg");
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.25em 0;
+}
+
+.footer img:hover {
+  border: 2px solid rgba(250, 241, 232, 0.81);
+  border-radius: 5px;
+  background-color: rgba(250, 241, 232, 0.99);
+}
+
+ul > li {
+  list-style-type: none;
+  
+}
+
+.img-container {
+  border: 1px solid #777;
+  width: 25%;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+.title {
+  font-weight: bold;
+}
+
+.meals {
+   text-align: center; 
+   margin: 15px;
+   
+}
